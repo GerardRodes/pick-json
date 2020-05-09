@@ -13,7 +13,7 @@ pub fn pick_json (filepath: &str, property: &str) -> Result<String, Error> {
   let mut buffer = vec![];
   let mut data: Vec<u8> = vec![];
   while f.read_until(b',', &mut buffer)? > 0 {
-    println!("BUFFER: {:?}", buffer.iter().map(|b| *b as char).collect::<Vec<char>>());
+    // println!("BUFFER: {:?}", buffer.iter().map(|b| *b as char).collect::<Vec<char>>());
 
     let mut i = 0;
     'outer: while i < buffer.len() {
@@ -45,10 +45,10 @@ pub fn pick_json (filepath: &str, property: &str) -> Result<String, Error> {
       while i < buffer.len() {
         let byte = buffer[i];
 
-        println!("char[{}](rt: {} | prop: {} | found: {}): {:?} => {:?}", i, is_reading_text, is_prop, found, byte as char, data.iter().map(|b| *b as char).collect::<Vec<char>>());
+        // println!("char[{}](rt: {} | prop: {} | found: {}): {:?} => {:?}", i, is_reading_text, is_prop, found, byte as char, data.iter().map(|b| *b as char).collect::<Vec<char>>());
 
         if escaped {
-          println!("\tscapped");
+          // println!("\tscapped");
           data.push(byte);
           escaped = false;
           i += 1;
@@ -61,7 +61,7 @@ pub fn pick_json (filepath: &str, property: &str) -> Result<String, Error> {
             let data_value = String::from_utf8_lossy(&data);
 
             if found {
-              println!("FOUND PICKED VALUE: {}", data_value);
+              // println!("FOUND PICKED VALUE: {}", data_value);
               return Ok(data_value.to_string());
             }
 
@@ -81,7 +81,7 @@ pub fn pick_json (filepath: &str, property: &str) -> Result<String, Error> {
             let data_value = String::from_utf8_lossy(&data);
 
             if found {
-              println!("FOUND PICKED VALUE: {}", data_value);
+              // println!("FOUND PICKED VALUE: {}", data_value);
               return Ok(data_value.to_string());
             }
 
