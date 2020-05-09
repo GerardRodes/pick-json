@@ -41,7 +41,7 @@ pub fn pick_json (filepath: &str, property: &str) -> Result<String, Error> {
 
             match byte {
               b'\\' => escaped = true,
-              b':' | b',' | b'}' => {
+              b':' | b',' | b'}' | b'\n' | b'\r' => {
                 if is_prop {
                   // remove quotations
                   data.remove(0);
