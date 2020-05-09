@@ -1,0 +1,27 @@
+{
+  "escaped_n": "hi\\n",
+  "escaped_n_and_r": "hi\\n\\\\r",
+  "escaped_n_and_r_and_keys": "hi\\n\\\\r,:",
+
+
+
+  "number":
+
+
+
+  1         ,
+
+
+
+  "boolean": true
+
+
+
+
+
+
+
+  ,
+
+  "emoji":                                            "🔥"
+}
