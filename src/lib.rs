@@ -111,7 +111,6 @@ pub fn pick_json (filepath: &str, property: &str) -> Result<String, Error> {
   Err(Error::from(ErrorKind::NotFound))
 }
 
-
 #[cfg(test)]
 mod tests {
   use super::*;
